@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import SCocktail from './style';
 
 function Cocktail({ strDrink, strDrinkThumb, idDrink }) {
   return (
-    <li>
+    <SCocktail>
       <Link to={`/${idDrink}`}>
-        <h3>{strDrink}</h3>
-        <img src={strDrinkThumb} alt="" />
+        <figure>
+          <img src={strDrinkThumb} alt="" />
+          <figcaption>{strDrink}</figcaption>
+        </figure>
       </Link>
-    </li>
+    </SCocktail>
   );
 }
 

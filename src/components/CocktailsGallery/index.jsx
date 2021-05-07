@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Cocktail from './Cocktail';
+import Cocktail from '../Cocktail';
+import SGallery from './style';
 
 function CocktailsGallery() {
   const [cocktails, setCocktails] = useState([]);
@@ -21,7 +22,7 @@ function CocktailsGallery() {
   }, [choiceAlcohol]);
 
   return (
-    <>
+    <SGallery>
       <h2>Cocktails</h2>
       <select onChange={handleChangeAlcohol}>
         <option value="Non_Alcoholic">Sans alcool</option>
@@ -32,7 +33,7 @@ function CocktailsGallery() {
           return <Cocktail key={cocktail.idDrink} {...cocktail} />;
         })}
       </ul>
-    </>
+    </SGallery>
   );
 }
 export default CocktailsGallery;
